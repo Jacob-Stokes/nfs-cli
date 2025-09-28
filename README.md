@@ -1,6 +1,6 @@
 # NearlyFreeSpeech Manager
 
-Management tools for NearlyFreeSpeech.NET accounts via API.
+Basic management tools for NearlyFreeSpeech.NET accounts via API.
 
 ## Structure
 
@@ -97,8 +97,3 @@ Domain names can be saved and reused across sessions.
 - jq
 - openssl
 
-## Security
-
-- API keys are never logged or displayed in full
-- Credentials are prompted securely when needed
-- Account ID auto-discovery prevents manual entry errors
