@@ -5,9 +5,10 @@ Management tools for NearlyFreeSpeech.NET accounts via API.
 ## Structure
 
 ```
-nfs-repo/
+nfs-cli/
 ├── nfs-manager.sh          # Interactive menu interface
 ├── nfs-cli.sh              # Command-line interface
+├── install.sh              # Optional installer for wrapper + credentials template
 ├── commands/               # Individual command scripts (interactive)
 │   ├── nfs-account-info.sh
 │   ├── nfs-dns.sh
@@ -19,6 +20,35 @@ nfs-repo/
     ├── common.sh          # Authentication, utilities
     └── dns.sh            # DNS operations
 ```
+
+## Installation (optional)
+
+You can run the scripts in-place, or install a small wrapper that makes
+`nfs-cli` available globally:
+
+```bash
+./install.sh
+```
+
+The installer will:
+
+- create `~/.config/nfs/credentials` (if missing) and set permissions to 600;
+- place a wrapper at `~/.local/bin/nfs-cli` (or the directory specified by
+  `$NFS_INSTALL_BIN_DIR`);
+- remind you to add the target directory to your `PATH` if required.
+
+By default the wrapper launches the interactive manager. Set
+`NFS_CLI_MODE=cli` to forward arguments straight to `nfs-cli.sh`:
+
+```bash
+NFS_CLI_MODE=cli nfs-cli dns --domain example.com --list
+```
+
+Additional installer environment overrides:
+
+- `NFS_CREDENTIAL_FILE` – custom location for the credentials file.
+- `NFS_INSTALL_BIN_DIR` – custom directory for the wrapper (`~/.local/bin` is
+  the default).
 
 ## Usage
 
