@@ -91,6 +91,10 @@ Supports both interactive menu and command-line operations:
 
 Domain names can be saved and reused across sessions.
 
+## Related
+
+- [nfs-mcp](https://github.com/Jacob-Stokes/nfs-mcp) – MCP server exposing the same NearlyFreeSpeech.NET operations as tools for AI agents (Claude Desktop, etc.)
+
 ## Requirements
 
 - curl
